@@ -10,7 +10,7 @@ export const predictDiabetes = async (req: Request, res: Response) => {
     console.log("INPUT:", userInput);
 
     const flaskRes = await axios.post(
-      'https://happyclinic-ai-backend-update.onrender.com/api/predict',
+      'https://happyclinic-ai-backend.onrender.com/api/predict',
       userInput
     );
 
