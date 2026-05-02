@@ -10,9 +10,9 @@ import { addDepartments, getDepartments,updateDepartment,
 import {getUser, changeUserRole,toggleUserActive} from '../controllers/security_controller';
 
 import {createMedicalRecord,updateMedicalRecord, getMedicalRecord} from '../controllers/medicalRecordInfor_controller';
-import {addMedicalRecord,listMedicalRecords,getMedicalRecordDetail,searchMedicalRecords,} from "../controllers/medicalRecordController";
+//import {addMedicalRecord,listMedicalRecords,getMedicalRecordDetail,searchMedicalRecords,} from "../controllers/medicalRecordController";
 import upload from "../middleware/upload";
-import { predictDiabetes, predictResourcePPO } from '../controllers/predictController';
+import { predictDiabetes } from '../controllers/predictController';
 
 
 const router = Router();
@@ -45,7 +45,7 @@ router.delete("/api_deleteDepartment/:id",verifyToken, deleteDepartment);
 
  //AI router python
  router.post("/api_predict",verifyToken, predictDiabetes);
- router.post("/ai/predictPPO", verifyToken, predictResourcePPO);
+//  router.post("/ai/predictPPO", verifyToken, predictResourcePPO);
 
 
  // medical record infor
@@ -53,10 +53,10 @@ router.delete("/api_deleteDepartment/:id",verifyToken, deleteDepartment);
   router.put("/api_updateMedicalRecord/:id", verifyToken,updateMedicalRecord);
   router.get("/api_getMedicalRecord",verifyToken, getMedicalRecord);
   // medical record with block chain 
-  router.post("/api/medicalrecord-blockchain", upload.array("attachments", 10),addMedicalRecord);
-  router.get("/api/medical-records/:id",verifyToken, getMedicalRecordDetail);
-  router.get("/api/list-medical-records", verifyToken,listMedicalRecords);
-  router.get("/api/medical-records-search",verifyToken, searchMedicalRecords);
+//   router.post("/api/medicalrecord-blockchain", upload.array("attachments", 10),addMedicalRecord);
+//   router.get("/api/medical-records/:id",verifyToken, getMedicalRecordDetail);
+//   router.get("/api/list-medical-records", verifyToken,listMedicalRecords);
+//   router.get("/api/medical-records-search",verifyToken, searchMedicalRecords);
  // router.get("/api/medical-records/:id/verify",verifyToken,verifyMedicalRecord);
   
 export default router;
