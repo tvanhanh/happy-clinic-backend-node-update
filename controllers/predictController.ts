@@ -6,7 +6,7 @@ import { Request, Response } from 'express';
 export const predictDiabetes = async (req: Request, res: Response) => {
   try {
     const userInput = req.body; 
-    const flaskRes = await axios.post('https://happyclinic-ai-backend.onrender.com/api/predict', userInput);
+    const flaskRes = await axios.post('https://happyclinic-ai-backend-update.onrender.com/api/predict', userInput);
 
      res.status(200).json(flaskRes.data);
      return;
